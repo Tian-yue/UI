@@ -13,6 +13,7 @@ class delivery():
     assertion = '''//div[@class="el-message el-message--success"]//p'''
 
     def cilck_Logistics_company(self):
+        pass
 
 
 

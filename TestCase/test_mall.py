@@ -3,6 +3,9 @@ from time import sleep
 from Common.Baseui import baseUI
 import pytest
 
+from TestCase.pages import order_list
+
+
 class Test_mall():
     # def test_login(self,driver):
     #     # 使用baseUI
@@ -24,6 +27,7 @@ class Test_mall():
     @pytest.mark.fh
     def test_fh(self,base):
         base.driver.get("http://192.168.60.132/#/oms/order")
+
         # 点击订单状态
         base.click('订单状态', '//label[contains(text(),"订单状态：")]/following-sibling::div//input')
 
@@ -38,6 +42,19 @@ class Test_mall():
         # 点击订单发货
         base.click('订单发货', '// span[contains(text(), "订单发货")]')
         sleep(3)
+
+
+
+        # 点击订单状态
+        # order_list1.click_order_status_a()
+        # # 点击待发货
+        # order_list1.click_To_be_shipped()
+        # # 点击查询搜索
+        # order_list1.click_Query_Search()
+        # # 点击订单发货
+        # order_list1.click_Order_delivery()
+
+
         # 选择物流
         base.click('选择物流', '// input[ @ placeholder = "请选择物流公司"]')
         base.click('选择物流', '//span[contains(text(),"中通快递")]')
